@@ -6,7 +6,7 @@ import Banner from '../components/Banner'
 export default function Home() {
 
   const handleOnBannerBtnClick = () => {
-    console.log('Hiiii')
+    console.log('Heyy')
   }
 
   return (
