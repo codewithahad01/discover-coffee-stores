@@ -18,31 +18,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <main className='relative overflow-hidden'>
-        <Banner className="absolute bottom-0 inset-x-0" buttonText="View stores nearby" handleOnClick={handleOnBannerBtnClick} />
-        <div className='relative'>
-          <Image className='absolute' src='/static/hero-image.png'
-          alt="hero img"
-          width={700}
-          height={400}
-          />
-        </div>
-      </main> */}
-
-
-
-      <div className="relative overflow-hidden pb-20">
-        <Image className='float-right' src='/static/hero-image.png'
-            alt="hero img"
-            width={700}
-            height={400}
-            />
+      <div className="relative overflow-hidden pb-32">  
+          <Image className='' src='/static/hero-image.png'
+              alt="hero img"
+              width={1440}
+              height={400}
+              />
+          
           <div className="absolute top-0 left-0 px-6 py-4 ">
           <Banner className="absolute bottom-0 inset-x-0" buttonText="View stores nearby" handleOnClick={handleOnBannerBtnClick} />
           </div>
       </div>
 
-      
+
 
     </div>
   )
