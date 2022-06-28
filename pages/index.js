@@ -10,6 +10,8 @@ export default function Home() {
     console.log('Heyy')
   }
 
+
+
   return (
     <div className=''>
       <Head>
