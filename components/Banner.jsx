@@ -10,7 +10,7 @@ function Banner(props) {
                     <span className='text-violet-900 font-extralight'>Connoisseur</span>
                 </h1>
                 <p className='mx-2 text-white md:text-xl mt-4'>Discover your local coffe shops!</p>
-                <button onClick={props.handleOnClick} className='focus:outline-black py-2 px-4 text-white mt-6 bg-violet-800 rounded-md shadow-xl hover:bg-white hover:text-black'>{props.buttonText}</button>
+                <button type='botton' onClick={props.handleOnClick} className='focus:outline-black py-2 px-4 text-white mt-6 bg-violet-800 rounded-md shadow-xl hover:bg-white hover:text-black'>{props.buttonText}</button>
             </div>
         </>
     )
