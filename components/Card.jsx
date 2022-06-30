@@ -1,14 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import globals from '../styles/globals.css'
+// import globals from '../styles/globals.css'
+import cls from 'classnames'
 
 function Card(props) {
     return (
-        <div className='flex flex-col justify-center items-center mx-auto my-10 md:grid md:grid-cols-3 md:p-20  '>
+        <div className=' justify-center items-center my-10 mx-4  '>
             <Link href={props.href} >
                 <a>
-                    <div className={globals.glass}>
+                    <div className={cls("glass", "p-8 rounded-lg shadow-2xl mx-auto md:")}>
                         <div>
                             <h2>{props.name}</h2>
                         </div>
