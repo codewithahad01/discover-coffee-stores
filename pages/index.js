@@ -3,6 +3,7 @@ import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import Banner from '../components/Banner'
 import Card from '../components/Card'
+import coffeeStores from '../data/coffee-stores.json'
 
 
 export default function Home() {
@@ -31,10 +32,16 @@ export default function Home() {
           </div>
       </main>
       <div className='flex justify-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'> 
-        <Card name="Dark House Coffee"
-        imgUrl='/static/hero-image.png' 
-        href='/coffee-store/darkhorse-coffee'
-        />
+
+          {coffeeStores.map(coffeeStores => {
+            return ( 
+              <Card key={coffeeStores.id}
+              name={coffeeStores.name}
+              imgUrl={coffeeStores.imgUrl} 
+              href={`/coffee-store/${coffeeStores.id}`}
+              />
+            )
+          } )}
       </div>
       
     </div>
