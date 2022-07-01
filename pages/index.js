@@ -31,7 +31,7 @@ export default function Home() {
             <Banner className="absolute bottom-0 inset-x-0" buttonText="View stores nearby" handleOnClick={handleOnBannerBtnClick} />
           </div>
       </main>
-      <div className='flex justify-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'> 
+      <div className='justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4'> 
 
           {coffeeStores.map(coffeeStores => {
             return ( 
