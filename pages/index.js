@@ -3,13 +3,13 @@ import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import Banner from '../components/Banner'
 import Card from '../components/Card'
-import coffeeStores from '../data/coffee-stores.json'
+import coffeeStoresData from '../data/coffee-stores.json'
 
 export async function getStaticProps(context){
   
   return {
     props: {
-      coffeeStores,
+      coffeeStores: coffeeStoresData,
     },
   }
 }
@@ -40,7 +40,8 @@ export default function Home(props) {
             <Banner className="absolute bottom-0 inset-x-0" buttonText="View stores nearby" handleOnClick={handleOnBannerBtnClick} />
           </div>
       </main>
-      {coffeeStores.length > 0 && <div><h2 className='text-2xl text-blue-800 font-bold ml-4'>Kabul Coffee Stores</h2>
+      {props.coffeeStores.length > 0 && <div>
+      <h2 className='text-2xl text-white font-bold ml-4 md:text-3xl xl:text-4xl'>Kabul Coffee Stores</h2>
       <div className='justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4'> 
 
           {props.coffeeStores.map(coffeeStores => {
@@ -54,6 +55,7 @@ export default function Home(props) {
           } )}
       </div>
       </div>
+      }
     </div>
   )
 }
