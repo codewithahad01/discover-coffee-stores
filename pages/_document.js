@@ -13,14 +13,6 @@ class MyDocument extends Document {
                         as="font"
                         crossOrigin="ananymous"
                     ></link>
-
-                    <link
-                        rel="preload"
-                        href="/fonts/IBMPlexSans-Medium.ttf"
-                        as="font"
-                        crossOrigin="ananymous"
-                    ></link>
-
                     <link
                         rel="preload"
                         href="/fonts/IBMPlexSans-Regular.ttf"
