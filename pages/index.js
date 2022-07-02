@@ -5,9 +5,18 @@ import Banner from '../components/Banner'
 import Card from '../components/Card'
 import coffeeStores from '../data/coffee-stores.json'
 
+export async function getStaticProps(context){
+  
+  return {
+    props: {
+      coffeeStores,
+    },
+  }
+}
 
-export default function Home() {
 
+export default function Home(props) {
+  console.log("props", props)
   const handleOnBannerBtnClick = () => {
     console.log('Heyy')
   }
@@ -31,9 +40,10 @@ export default function Home() {
             <Banner className="absolute bottom-0 inset-x-0" buttonText="View stores nearby" handleOnClick={handleOnBannerBtnClick} />
           </div>
       </main>
+      {coffeeStores.length > 0 && <div><h2 className='text-2xl text-blue-800 font-bold ml-4'>Kabul Coffee Stores</h2>
       <div className='justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4'> 
 
-          {coffeeStores.map(coffeeStores => {
+          {props.coffeeStores.map(coffeeStores => {
             return ( 
               <Card key={coffeeStores.id}
               name={coffeeStores.name}
@@ -43,7 +53,7 @@ export default function Home() {
             )
           } )}
       </div>
-      
+      </div>
     </div>
   )
 }
