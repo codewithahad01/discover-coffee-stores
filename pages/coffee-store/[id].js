@@ -14,6 +14,13 @@ export function getStaticProps(staticProps) {
     }
 }
 
+export function getStaticPaths() {
+    return {
+        path: [
+            {params: {id: '0'}},{params: {id: '1'}},], 
+            fallback: false,
+    }
+}
 const CoffeeStore = () => {
     const router = useRouter()
     console.log("router", router)
