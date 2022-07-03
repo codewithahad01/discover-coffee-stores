@@ -2,10 +2,12 @@ import React from 'react'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 import CoffeeStoresData from '../../data/coffee-stores.json'
+import Head from 'next/head'
+import Image from 'next/image'
+import cls from 'classnames'
 
 export function getStaticProps(staticProps) {
     const params = staticProps.params
-    console.log("params", params)
     return {
         props: {
             CoffeeStore: CoffeeStoresData.find(CoffeeStore => {
@@ -16,25 +18,71 @@ export function getStaticProps(staticProps) {
 }
 
 export function getStaticPaths() {
+    const paths = CoffeeStoresData.map(coffeeStore => {
+        return {
+            params: {
+                id: coffeeStore.id.toString(),
+            }
+        }
+    })
     return {
-        paths: [
-            {params: {id: '0'}},{params: {id: '1'}},], 
-            fallback: false,
+        paths: paths, 
+        fallback: true,
     }
 }
 
 const CoffeeStore = (props) => {
     const router = useRouter()
-    console.log("router", router)
 
-    console.log("props", props)
+    if(router.isFallback) {
+        return <div className='text-xl md:text-2xl'> Loading... </div>
+    }
+
+    const {address, name, neighbourhood, imgUrl} = props.CoffeeStore
+
+    const handleUpvoteButton = () => {
+        console.log('heyyy iam up voted')
+    }
+    
     return (
-        <div>
-            <h1 className='text-4xl'>Coffee Store {router.query.id}</h1><br />
-            <Link href='/'><a className='text-4xl underline'>Back to home</a></Link><br />
-            <Link href='/coffee-store/dynamic'><a className='text-4xl underline'>go to page dynamic</a></Link>
-            <p>{props.CoffeeStore.address}</p>
-            <p>{props.CoffeeStore.name}</p>
+        <div className=''>
+            <Head>
+                <title>{name}</title> 
+            </Head>
+            <div className='container'>
+                <div>
+                    <div>
+                        <Link href='/'><a className='text-xl underline'>Back to home</a></Link>
+                    </div>
+                    <h1>{name}</h1>
+                    <Image
+                        src={imgUrl} 
+                        alt={name} 
+                        width={600} 
+                        height={360}
+                    ></Image>
+                </div>
+
+                <div className={cls('glass', '')}>
+                <div>
+                    <Image src='' alt={name} width={24} height={24} ></Image>
+                    <p>{address}</p>
+                </div>
+                    
+                <div>
+                    <Image src='' alt={name} width={24} height={24} ></Image>
+                    <p>{neighbourhood}</p>
+                </div>
+
+                <div>
+                    <Image src='' alt={name} width={24} height={24} ></Image>
+                    <p>1</p>
+                </div>
+
+                <button type='button' className='bg-violet-800 text-white font-bold px-10 py-7' onClick={handleUpvoteButton }>Up votes!</button>
+
+                </div>
+            </div>
         </div>
     )
 }
