@@ -45,39 +45,39 @@ const CoffeeStore = (props) => {
     }
     
     return (
-        <div className=''>
+        <div className='h-screen w-screen md:mt-20'>
             <Head>
                 <title>{name}</title> 
             </Head>
-            <div className='container flex flex-col px-7 py-20'>
-                <div>
+            <div className=' px-7 py-20 lg:flex lg:mx-auto lg:justify-center lg:items-center'>
+                <div className='md:p-20'>
                     <div>
-                        <Link href='/'><a className='text-xl font-bold'>Back to home</a></Link>
+                        <Link href='/'><a className='text-xl font-bold lg:text-2xl '>Back to home</a></Link>
                     </div>
-                    <h1 className='py-6 text-3xl text-white font-bold'>{name}</h1>
+                    <h1 className='py-6 text-3xl text-white font-bold md:text-4xl lg:text-5xl'>{name}</h1>
                     <Image
-                        className='rounded-xl shadow-2xl '
+                        className='rounded-xl shadow-2xl'
                         src={imgUrl} 
                         alt={name} 
-                        width={600} 
-                        height={360}
+                        width={800} 
+                        height={560}
                     ></Image>
                 </div>
 
-                <div className={cls('glass', 'rounded-xl shadow-2xl p-4 mt-10 py-8 hover:opacity-90 cursor-pointer')}>
-                <div className='flex'>
+                <div className={cls('glass', ' rounded-xl shadow-2xl p-4 mt-10 py-8 hover:opacity-90 cursor-pointer lg:px-56 lg:pl-32 lg:ml-10')}>
+                <div className='flex '>
                     <Image className='' src='/static/icons/places.svg' alt={name} width={24} height={24} ></Image>
-                    <p className='font-bold text-xl ml-4'>{address}</p>
+                    <p className='font-bold text-xl ml-4 md:text-xl lg:text-2xl xl:text-2xl'>{address}</p>
                 </div>
                     
                 <div className='flex mt-4'>
                     <Image src='/static/icons/nearMe.svg' alt={name} width={24} height={24} ></Image>
-                    <p className='font-bold text-xl ml-4 '>{neighbourhood}</p>
+                    <p className='font-bold text-xl ml-4 md:text-xl lg:text-xl xl:text-2xl'>{neighbourhood}</p>
                 </div>
 
                 <div className='flex mt-4'>
                     <Image src='/static/icons/star.svg' alt={name} width={24} height={24} ></Image>
-                    <p className='font-bold text-xl ml-4'>1</p>
+                    <p className='font-bold text-xl ml-4 md:text-xl lg:text-xl xl:text-2xl'>1</p>
                 </div>
 
                 <button type='button' className='bg-violet-800 text-white font-bold px-10 py-2 rounded-lg shadow-xl my-4 hover:opacity-70' onClick={handleUpvoteButton }>Up votes!</button>
