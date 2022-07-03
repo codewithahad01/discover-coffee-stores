@@ -41,7 +41,7 @@ export default function Home(props) {
           </div>
       </main>
       {props.coffeeStores.length > 0 && <div>
-      <h2 className='text-2xl text-white font-bold ml-4 md:text-3xl xl:text-4xl'>Kabul Coffee Stores</h2>
+      <h2 className='text-2xl text-white font-bold ml-10 md:text-3xl xl:text-4xl xl:ml-20'>Kabul Coffee Stores</h2>
       <div className='justify-center items-center md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4'> 
 
           {props.coffeeStores.map(coffeeStores => {

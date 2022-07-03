@@ -7,7 +7,7 @@ import cls from 'classnames'
 function Card(props) {
     return (
         
-        <div className=' justify-center items-center my-10 mx-4  '>
+        <div className=' justify-center items-center my-10 mx-10 xl:mx-20'>
             <Link href={props.href} >
                 <a>
                     <div className={cls("glass", "p-2 rounded-lg shadow-2xl mx-auto md:")}>
