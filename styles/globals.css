@@ -11,11 +11,10 @@ body {
 
 
     background: url('../public/static/background.png');
-    /* background-position: 100%;
-    background-repeat: no-repeat; */
+    background-position: 100%;
+    background-repeat: no-repeat; 
     background-size: cover;
     color: #373b64;
-    height: 100%;
 }
 
 /* glass-morphism */
