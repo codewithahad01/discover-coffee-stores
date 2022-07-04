@@ -53,7 +53,7 @@ const CoffeeStore = (props) => {
             <div className=' px-7 py-20 lg:flex  lg:justify-center lg:items-center'>
                 <div className='md:p-20'>
                     <div>
-                        <Link href='/'><a className='text-xl font-bold lg:text-2xl '>Back to home</a></Link>
+                        <Link href='/'><a className='text-xl font-bold lg:text-2xl '><span className='text-xl font-bold'>←</span> Back to home</a></Link>
                     </div>
                     <h1 className='py-6 text-3xl text-white font-bold md:text-4xl lg:text-5xl'>{name}</h1>
                     <Image
