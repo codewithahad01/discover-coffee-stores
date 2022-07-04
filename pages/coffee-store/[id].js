@@ -17,6 +17,7 @@ export function getStaticProps(staticProps) {
     }
 }
 
+
 export function getStaticPaths() {
     const paths = CoffeeStoresData.map(coffeeStore => {
         return {
