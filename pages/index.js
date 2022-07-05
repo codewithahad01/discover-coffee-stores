@@ -19,6 +19,7 @@ export default function Home(props) {
   console.log("props", props)
   const handleOnBannerBtnClick = () => {
     console.log('Heyy')
+    // handleTrackLocation()
   }
 
   return (
